@@ -19,7 +19,7 @@ class TuitsController < ApplicationController
   private
 
   def tuits_list
-    @user = User.find(params[:user_id]) if params[:user_id]
+    @user = User.find_by_username(params[:user_id])
     if @user
       @followership = current_user.followerships.find_or_initialize_by_followed_id(@user.id) if logged_in?
       @user.tuits
