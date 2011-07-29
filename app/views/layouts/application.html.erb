@@ -19,7 +19,7 @@
         <%= link_to "Sign up", signup_path %> or
         <%= link_to "log in", login_path %>.
       <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= content_tag :h1, link_to(yield(:title), root_url) if show_title? %>
       <%= yield %>
     </div>
   </body>

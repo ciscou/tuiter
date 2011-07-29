@@ -12,6 +12,11 @@ a {
   color: #0000FF;
 }
 
+h1 a, h2 a {
+  text-decoration: none;
+  color: #000;
+}
+
 .clear {
   clear: both;
   height: 0;

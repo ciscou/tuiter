@@ -1,10 +1,12 @@
 <% title "Tuiter" %>
 
-<%= render 'form' %>
+<% if logged_in? %>
+  <%= render 'form' %>
+<% end %>
 
 <% @tuits.each do |tuit| %>
   <%= div_for tuit do %>
-    <h2><%= tuit.user.username %></h2>
+    <h2><%= link_to_unless_current tuit.user.username, user_tuits_path(tuit.user) %></h2>
     <%= tuit.body %><br/>
     <%= time_ago_in_words tuit.created_at %> ago
     <hr/>
