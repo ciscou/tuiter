@@ -24,7 +24,11 @@ class TuitsController < ApplicationController
       @followership = current_user.followerships.find_or_initialize_by_followed_id(@user.id) if logged_in?
       @user.tuits
     else
-      Tuit.all
+      if logged_in?
+        Tuit.where(:user_id => current_user.followerships.map(&:followed_id) + [current_user.id])
+      else
+        Tuit.all
+      end
     end
   end
 end
