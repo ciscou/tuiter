@@ -9,6 +9,7 @@ Tuiter::Application.routes.draw do
     resources :tuits, :only => :index
   end
   resources :tuits, :only => [:index, :create]
+  resources :followerships, :only => [:create, :destroy]
 
   root :to => "tuits#index"
 

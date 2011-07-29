@@ -1,0 +1,8 @@
+<% if @followership.new_record? %>
+  <%= form_for @followership do |f| %>
+    <%= f.hidden_field :followed_id %>
+    <%= f.submit "Follow!" %>
+  <% end %>
+<% else %>
+  <%= button_to "Unfollow!", { :controller => :followerships, :action => :destroy, :id => @followership.id }, :method => :delete %>
+<% end %>

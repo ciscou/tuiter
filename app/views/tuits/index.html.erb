@@ -1,7 +1,11 @@
 <% title "Tuiter" %>
 
 <% if logged_in? %>
-  <%= render 'form' %>
+  <% if @user %>
+    <%= render 'followerships/form' %>
+  <% else %>
+    <%= render 'form' %>
+  <% end %>
 <% end %>
 
 <% @tuits.each do |tuit| %>
