@@ -1,4 +1,8 @@
 Tuiter::Application.routes.draw do
+  resources :tuits
+
+  root :to => "tuits#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

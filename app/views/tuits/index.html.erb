@@ -1,0 +1,17 @@
+<% title "Tuits" %>
+
+<table>
+  <tr>
+    <th>Body</th>
+  </tr>
+  <% for tuit in @tuits %>
+    <tr>
+      <td><%= tuit.body %></td>
+      <td><%= link_to "Show", tuit %></td>
+      <td><%= link_to "Edit", edit_tuit_path(tuit) %></td>
+      <td><%= link_to "Destroy", tuit, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Tuit", new_tuit_path %></p>
