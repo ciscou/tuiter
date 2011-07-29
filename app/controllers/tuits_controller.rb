@@ -2,7 +2,7 @@ class TuitsController < ApplicationController
   before_filter :login_required, :except => :index
 
   def index
-    @tuits = tuits_list
+    @tuits = tuits_list.after(params[:after])
     @tuit  = current_user.tuits.build if logged_in?
   end
 

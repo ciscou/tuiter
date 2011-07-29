@@ -8,6 +8,6 @@
   <% end %>
 <% end %>
 
-<div id="tuits">
+<div id="tuits" <% if @user %>data-username="<%= @user.username %>"<% end %>>
   <%= render @tuits %>
 </div>

@@ -2,5 +2,4 @@
   alert("<%= @tuit.errors.full_messages.join(", ") %>");
 <% else %>
   $("#tuit_body").val("");
-  $("<%= escape_javascript render @tuit %>").hide().prependTo("#tuits").fadeIn();
 <% end %>

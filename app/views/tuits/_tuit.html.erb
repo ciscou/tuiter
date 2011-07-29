@@ -1,4 +1,4 @@
-<%= div_for tuit do %>
+<%= div_for tuit, "data-time" => tuit.created_at.to_i do %>
   <h2><%= link_to_unless_current tuit.user.username, user_tuits_path(tuit.user) %></h2>
   <%= tuit.body %><br/>
   <%= time_ago_in_words tuit.created_at %> ago
