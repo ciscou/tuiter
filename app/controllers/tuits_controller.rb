@@ -33,7 +33,7 @@ class TuitsController < ApplicationController
       if logged_in?
         Tuit.where(:user_id => current_user.followerships.map(&:followed_id) + [current_user.id])
       else
-        Tuit.all
+        Tuit.scoped
       end
     end
   end
