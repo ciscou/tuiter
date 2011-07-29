@@ -8,11 +8,17 @@ class TuitsController < ApplicationController
 
   def create
     @tuit = current_user.tuits.build(params[:tuit])
-    if @tuit.save
-      redirect_to tuits_url, :notice => "Successfully created tuit."
-    else
-      @tuits = tuits_list
-      render :action => 'index'
+    respond_to do |format|
+      if @tuit.save
+        format.html { redirect_to tuits_url, :notice => "Successfully created tuit." }
+        format.js
+      else
+        format.html {
+          @tuits = tuits_list
+          render :action => 'index'
+        }
+        format.js
+      end
     end
   end
 

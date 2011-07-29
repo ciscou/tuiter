@@ -1,8 +1,8 @@
-<%= form_for @tuit do |f| %>
+<%= form_for @tuit, :remote => true do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :body, "What are you doing?" %><br />
     <%= f.text_area :body, :rows => 3 %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Send tuit", :disable_with => "Sending tuit" %></p>
 <% end %>
