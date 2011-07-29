@@ -1,5 +1,5 @@
 Tuiter::Application.routes.draw do
-  resources :tuits
+  resources :tuits, :only => [:index, :create]
 
   root :to => "tuits#index"
 

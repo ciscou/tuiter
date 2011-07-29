@@ -1,8 +1,8 @@
 <%= form_for @tuit do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.label :body, "What are you doing?" %><br />
+    <%= f.text_area :body, :rows => 3 %>
   </p>
   <p><%= f.submit %></p>
 <% end %>
